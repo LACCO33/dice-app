@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サイコロ</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    #dice {
+      font-size: 120px;
+      margin-bottom: 30px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 12px 30px;
+      margin: 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    #start {
+      background: #333;
+      color: white;
+    }
+
+    #stop {
+      background: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎲 サイコロ</h1>
+
+  <div id="dice">⚀</div>
+
+  <div>
+    <button id="start">開始</button>
+    <button id="stop">停止</button>
+  </div>
+
+  <script>
+    const dice = document.getElementById("dice");
+    const startButton = document.getElementById("start");
+    const stopButton = document.getElementById("stop");
+
+    const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+    let timer = null;
+
+    startButton.addEventListener("click", () => {
+      if (timer !== null) return;
+
+      timer = setInterval(() => {
+        const randomNumber = Math.floor(Math.random() * 6);
+        dice.textContent = diceFaces[randomNumber];
+      }, 100);
+    });
+
+    stopButton.addEventListener("click", () => {
+      clearInterval(timer);
+      timer = null;
+    });
+  </script>
+
+</body>
+</html>
