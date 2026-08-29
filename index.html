@@ -55,12 +55,12 @@
 
 <body>
 
-  <h1>🎲 サイコロ1.7</h1>
+  <h1>🎲 サイコロ 1.8</h1>
 
   <div id="dice1">1</div>
   <div id="dice2">1</div>
   <div id="total">2</div>
-  <div id="history">null</div>
+  <div id="history">0</div>
 
   <div>
     <button id="start">START</button>
@@ -97,7 +97,7 @@
     stopButton.addEventListener("click", () => {
       clearInterval(timer);
       timer = null;
-      results.push(dice.textContent);
+      results.push(total.textContent);
       history.textContent = results.join(" ");
     });
 
