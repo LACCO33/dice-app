@@ -55,7 +55,7 @@
 
 <body>
 
-  <h1>🎲 サイコロ1.4</h1>
+  <h1>🎲 サイコロ1.5</h1>
 
   <div id="dice1">1</div>
   <div id="dice2">1</div>
@@ -68,7 +68,8 @@
   </div>
 
   <script>
-    const dice = document.getElementById("dice");
+    const dice1 = document.getElementById("dice1");
+    const dice2 = document.getElementById("dice2");
     const startButton = document.getElementById("start");
     const stopButton = document.getElementById("stop");
     const history = document.getElementById("history");
@@ -83,8 +84,10 @@
       if (timer !== null) return;
 
       timer = setInterval(() => {
-        const randomNumber = Math.floor(Math.random() * 100) + 1;
-        dice.textContent = randomNumber;
+        const randomNumber1 = Math.floor(Math.random() * 100) + 1;
+        const randomNumber2 = Math.floor(Math.random() * 100) + 1;
+        dice1.textContent = randomNumber1;
+        dice2.textContent = randomNumber2;
       }, 100);
     });
 
