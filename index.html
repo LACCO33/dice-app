@@ -68,7 +68,7 @@
     const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
 
     let timer = null;
-    let results = [1];
+    let results = [];
 
     startButton.addEventListener("click", () => {
       if (timer !== null) return;
@@ -76,12 +76,13 @@
       timer = setInterval(() => {
         const randomNumber = Math.floor(Math.random() * 6);
         dice.textContent = diceFaces[randomNumber];
-      }, 500);
+      }, 100);
     });
 
     stopButton.addEventListener("click", () => {
       clearInterval(timer);
       timer = null;
+      results.push(dice.textContent);
     });
   </script>
 
