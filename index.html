@@ -55,7 +55,7 @@
 
 <body>
 
-  <h1>🎲 サイコロ 2.0</h1>
+  <h1>🎲 サイコロ 2.1</h1>
 
   <div id="dice1">1</div>
   <div id="dice2">1</div>
@@ -96,6 +96,7 @@
     });
 
     stopButton.addEventListener("click", () => {
+      alert("結果が決まりました！");
       clearInterval(timer);
       timer = null;
       results.push(total.textContent);
